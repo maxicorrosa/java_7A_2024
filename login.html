@@ -1,14 +1,14 @@
 <html>
  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <style>
 	body {
 background-image: url('https://img1.wallspic.com/crops/6/1/6/4/7/174616/174616-el_minimalismo-sistema_operativo-gesto-gas-circulo-7680x4320.jpg');
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-color: white;
+background-size: cover; 
+background-position: center; 
+background-repeat: no-repeat; 
+color: white; 
 display: flex; 
 justify-content: center; 
 align-items: center;
@@ -16,16 +16,16 @@ align-items: center;
 	
 	.container {
 display: flex;
-gap: 20px;
+gap: 20px; 
         }
 	
-	.login-container {
+	 .login-container {
 background-color: rgba(0, 0, 0, 0.7); 
 padding: 20px;
 border-radius: 10px; 
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
-text-align: center;
-width: 300px;
+text-align: center; 
+width: 300px; 
         }
         
 	h1 {
@@ -34,14 +34,14 @@ font-size: 48px;
         
 	input[type="text"],
         input[type="password"] {
-width: 100%;
+width: 100%; 
 padding: 10px;
-margin: 10px 0;
-border: none;
+margin: 10px 0; 
+border: none; 
 border-radius: 5px;
         }
         
-	button {
+	.login-button {
 padding: 10px;
 border: none;
 border-radius: 5px;
@@ -49,19 +49,24 @@ background-color: #5dc7c8;
 color: black;
 font-size: 16px;
 cursor: pointer;
-width: 100%;
+text-decoration: none; 
+display: block; 
+width: 93%;
+text-align: center;
+transition: background-color 0.3s ease, transform 0.3s ease;
         }
         
-	button:hover {
-background-color: #FF6F91;
+	.login-button:hover {
+background-color: #fbc376;
+transform: scale(1.05);
         }
 
 	.register-link {
 display: block;
 margin-top: 20px;
-color: #5dc7c8;
-text-decoration: none;
-font-size: 16px;
+color: #5dc7c8; 
+text-decoration: none; 
+font-size: 16px; 
         }
 
   </style>
@@ -72,9 +77,9 @@ font-size: 16px;
         <form>
             <input type="text" placeholder="Nombre de Usuario" required>
             <input type="password" placeholder="Contraseña" required>
-            <button type="submit">Iniciar Sesión</button>
+            <a href="https://maxicorrosa.github.io/java_7A_2024/menuprincipal.html" class="login-button">Iniciar Sesión</a> 
         </form>
-        <a href="register.html" class="register-link">Registrarse</a>
+        <a href="register.html" class="register-link">Registrarse</a> 
     </div>
      <div class="register-container">
 
