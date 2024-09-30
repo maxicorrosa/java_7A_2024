@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Comidas</title>
+    <style>
+        body {
+            background-image: url('https://img1.wallspic.com/crops/6/1/6/4/7/174616/174616-el_minimalismo-sistema_operativo-gesto-gas-circulo-7680x4320.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-right: 50px;
+        }
+
+        .enlace-cuadrado {
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            border: 2px solid white;
+            background-color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            line-height: 150px;
+            font-size: 16px;
+            text-decoration: none;
+            color: black;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .enlace-cuadradito {
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            border: 2px solid white;
+            background-color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            line-height: 20px;
+            font-size: 16px;
+            text-decoration: none;
+            color: black;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .enlace-cuadrado:hover {
+            background-color: rgba(251, 195, 118, 0.7);
+            transform: scale(1.1);
+        }
+
+        .enlace-cuadradito:hover {
+            background-color: rgba(111, 199, 199, 0.7);
+            transform: scale(1.1);
+        }
+
+        .lista-comidas {
+            display: none;
+            margin-top: -0px;
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 300px;
+            position: relative;
+            margin-left: 50px;
+            color: black;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .lista-comidas ul {
+            flex: 1;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .acciones {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .volver-menu {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .volver-menu:hover {
+            background-color: rgba(251, 195, 118, 0.7);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="enlace-cuadrado" onclick="toggleList('bajas')">Bajas Calorías</div>
+        <div class="enlace-cuadrado" onclick="toggleList('proteinas')">Altas en Proteína</div>
+        <div class="enlace-cuadrado" onclick="toggleList('carbohidratos')">Altas en Carbohidratos</div>
+        <div class="enlace-cuadrado" onclick="toggleList('calorias')">Altas en Calorías</div>
+    </div>
+
+    <div id="listas">
+        <div id="bajas" class="lista-comidas">
+            <h4>Comidas Bajas en Calorías</h4>
+            <ul>
+                <li><a href="https://comedera.com/receta-ensalada-de-espinacas/" target="_blank">Ensalada de espinacas</a></li>
+                <li><a href="https://www.bonviveur.es/recetas/pechugas-de-pollo-a-la-plancha" target="_blank">Pechuga de pollo a la plancha</a></li>
+                <li><a href="https://www.bonviveur.es/recetas/pechugas-de-pollo-a-la-plancha" target="_blank">Sopa de verduras</a></li>
+            </ul>
+            <div class="acciones">
+                <div class="enlace-cuadradito" onclick="uploadRecipe()">Subir Receta</div>
+                <div class="enlace-cuadradito" onclick="downloadRecipes()">Descargar Recetas</div>
+            </div>
+        </div>
+        <div id="proteinas" class="lista-comidas">
+            <h4>Comidas Altas en Proteína</h4>
+            <ul>
+                <li><a href="" target="_blank">Huevos revueltos</a></li>
+                <li><a href="" target="_blank">Quinoa con verduras</a></li>
+                <li><a href="" target="_blank">Batido de proteínas</a></li>
+            </ul>
+            <div class="acciones">
+                <div class="enlace-cuadradito" onclick="uploadRecipe()">Subir Receta</div>
+                <div class="enlace-cuadradito" onclick="downloadRecipes()">Descargar Recetas</div>
+            </div>
+        </div>
+        <div id="carbohidratos" class="lista-comidas">
+            <h4>Comidas Altas en Carbohidratos</h4>
+            <ul>
+                <li><a href="" target="_blank">Pasta integral</a></li>
+                <li><a href="" target="_blank">Arroz con pollo</a></li>
+                <li><a href="" target="_blank">Frijoles negros</a></li>
+            </ul>
+            <div class="acciones">
+                <div class="enlace-cuadradito" onclick="uploadRecipe()">Subir Receta</div>
+                <div class="enlace-cuadradito" onclick="downloadRecipes()">Descargar Recetas</div>
+            </div>
+        </div>
+        <div id="calorias" class="lista-comidas">
+            <h4>Comidas Altas en Calorías</h4>
+            <ul>
+                <li><a href="" target="_blank">Burger con queso</a></li>
+                <li><a href="" target="_blank">Pizza con pepperoni</a></li>
+                <li><a href="" target="_blank">Helado de chocolate</a></li>
+            </ul>
+            <div class="acciones">
+                <div class="enlace-cuadradito" onclick="uploadRecipe()">Subir Receta</div>
+                <div class="enlace-cuadradito" onclick="downloadRecipes()">Descargar Recetas</div>
+            </div>
+        </div>
+    </div>
+
+    <button class="volver-menu" onclick="location.href='https://maxicorrosa.github.io/java_7A_2024/menuprincipal.html'">Volver al Menú Principal</button>
+
+    <script>
+    window.onload = function() {
+        const listas = document.querySelectorAll('.lista-comidas');
+        listas.forEach(function(item) {
+            item.style.display = 'none';
+        });
+    };
+
+    function toggleList(tipo) {
+        const lista = document.getElementById(tipo);
+        const listas = document.querySelectorAll('.lista-comidas');
+
+        listas.forEach(function(item) {
+            if (item !== lista) {
+                item.style.display = 'none';
+            }
+        });
+
+        lista.style.display = lista.style.display === 'block' ? 'none' : 'block';
+    }
+    </script>
+</body>
+</html>
